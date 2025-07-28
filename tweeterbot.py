@@ -1,5 +1,10 @@
 import discord
 from discord.ext import commands, tasks
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 news_channel_id = None
 
@@ -32,7 +37,7 @@ async def setchannel(ctx):
         test_drive.start()
 
 
-@tasks.loop(days=1)
+@tasks.loop(hours=24)
 async def test_drive():
     if news_channel_id:
             channel = bot.get_channel(news_channel_id)
