@@ -21,9 +21,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    username = str(message.author).split('#')[0]
-    channel = str(message.channel.name)
-    user_message = str(message.content)
+    global started
     if message.author.bot:
         return
     await bot.process_commands(message)
