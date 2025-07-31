@@ -1,3 +1,4 @@
 datetime
 discord.py
 python-dotenv
+requests
